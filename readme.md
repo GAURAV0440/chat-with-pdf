@@ -27,27 +27,7 @@ The app extracts text, generates embeddings, stores them in a vector database (P
 ---
 
 ## 📂 Project Structure
-forceproject/
-│
-├── components/
-│ ├── QuestionForm.js
-│ ├── QuestionForm.module.css
-│ ├── UploadForm.js
-│ ├── UploadForm.module.css
-│
-├── pages/
-│ ├── api/
-│ │ ├── askQuestion.js
-│ │ ├── upload.js
-│ ├── index.js
-│
-├── styles/
-│ ├── Home.module.css
-├── .env
-├── package.json
-├── package-lock.json
-
-
+<img width="378" height="511" alt="image" src="https://github.com/user-attachments/assets/835f1e02-9835-4427-8548-1473c82563b5" />
 
 ---
 
@@ -63,14 +43,16 @@ Clone the repo:
 git clone https://github.com/GAURAV0440/chat-with-pdf
 cd chat-with-pdf
 
-
+--
 Install dependencies:
 npm install
 
-
+--
 Run the dev server:
 npm run dev
 
+--
+Open http://localhost:3000 in your browser.
 
-Open http://localhost:3000
- in your browser.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/99378739-6451-4f75-969a-10eee0a9e291" />
