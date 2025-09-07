@@ -1,5 +1,3 @@
-// pages/api/askQuestion.js
-
 import { Pinecone } from '@pinecone-database/pinecone';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
@@ -11,7 +9,7 @@ const pinecone = new Pinecone({
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { question, fileId } = req.body; // ✅ expect fileId too
+    const { question, fileId } = req.body; // expect fileId too
 
     try {
       const embeddingModel = genAI.getGenerativeModel({ model: 'text-embedding-004' });
@@ -20,7 +18,7 @@ export default async function handler(req, res) {
 
       const index = pinecone.index(process.env.PINECONE_INDEX);
 
-      // ✅ query only current file
+      // query only current file
       const queryResults = await index.query({
         vector: questionVector,
         topK: 3,

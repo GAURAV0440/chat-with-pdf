@@ -60,6 +60,8 @@ PINECONE_INDEX=your-pinecone-index-name
 ## Run Locally
 
 Clone the repo:
+git clone https://github.com/GAURAV0440/chat-with-pdf
+cd chat-with-pdf
 
 
 Install dependencies:

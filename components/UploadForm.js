@@ -1,5 +1,3 @@
-// components/UploadForm.js
-
 import { useState, useRef } from 'react';
 import styles from './UploadForm.module.css';
 
@@ -67,8 +65,8 @@ export default function UploadForm() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage('✅ File uploaded and processed successfully!');
-        // ✅ Save latest fileId for questions
+        setMessage('File uploaded and processed successfully!');
+        // Save latest fileId for questions
         if (data.fileId) {
           localStorage.setItem('fileId', data.fileId);
         }

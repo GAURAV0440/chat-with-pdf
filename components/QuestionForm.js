@@ -1,11 +1,9 @@
-// components/QuestionForm.js
-
 import { useState, useRef, useEffect } from 'react';
 import styles from './QuestionForm.module.css';
 
 export default function QuestionForm() {
   const [question, setQuestion] = useState('');
-  const [qaList, setQaList] = useState([]); // ✅ store multiple Q&A pairs
+  const [qaList, setQaList] = useState([]); // store multiple Q&A pairs
   const [isLoading, setIsLoading] = useState(false);
   const chatEndRef = useRef(null);
 
@@ -16,7 +14,7 @@ export default function QuestionForm() {
     setIsLoading(true);
     setQuestion(''); // clear textbox immediately
 
-    const fileId = localStorage.getItem('fileId'); // ✅ use latest uploaded file
+    const fileId = localStorage.getItem('fileId'); // use latest uploaded file
     if (!fileId) {
       alert('Please upload a PDF first.');
       setIsLoading(false);
@@ -29,7 +27,7 @@ export default function QuestionForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ question: currentQuestion, fileId }), // ✅ include fileId
+        body: JSON.stringify({ question: currentQuestion, fileId }), // include fileId
       });
 
       const data = await response.json();
@@ -41,7 +39,7 @@ export default function QuestionForm() {
           : `❌ ${data.error || 'Error retrieving answer.'}`,
       };
 
-      // ✅ append to list
+      // append to list
       setQaList((prev) => [...prev, newQA]);
     } catch (error) {
       setQaList((prev) => [
@@ -53,7 +51,7 @@ export default function QuestionForm() {
     }
   };
 
-  // ✅ auto-scroll when new Q&A added
+  // auto-scroll when new Q&A added
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [qaList]);
@@ -89,8 +87,8 @@ export default function QuestionForm() {
         style={{
           marginTop: '1.5rem',
           textAlign: 'left',
-          maxHeight: '300px', // ✅ fixed height
-          overflowY: 'auto', // ✅ scroll when too long
+          maxHeight: '300px', // fixed height
+          overflowY: 'auto', // scroll when too long
           paddingRight: '0.5rem',
         }}
       >

@@ -1,5 +1,3 @@
-// pages/api/upload.js
-
 import { Pinecone } from '@pinecone-database/pinecone';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import pdfParse from 'pdf-parse';
